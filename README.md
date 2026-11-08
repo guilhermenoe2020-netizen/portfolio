@@ -1,5 +1,7 @@
 # Portfólio · Guilherme Noé
 
+**[Acessar portfolio](https://portfolio-omega-ten-79.vercel.app/)**
+
 Portfólio pessoal criado para apresentar quem sou, minha trajetória como estudante de Análise e Desenvolvimento de Sistemas e os projetos que desenvolvo enquanto busco minha primeira oportunidade de estágio.
 
 O site reúne projetos pessoais, tecnologias que estudo e utilizo e minha jornada de aprendizado. O visual combina referências de terminal e pixel art com uma interface responsiva, animações leves e conteúdo em português e inglês.
