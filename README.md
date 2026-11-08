@@ -27,32 +27,26 @@ As imagens abaixo mostram a página inicial e a seção de tecnologias:
 
 ## Tecnologias utilizadas
 
-- **React** — interface dividida em componentes e seções.
-- **JavaScript** — interações e comportamento da aplicação.
-- **Vite** — servidor de desenvolvimento e build de produção.
-- **CSS** — tema, layout responsivo, animações e efeitos visuais.
-- **Lucide React** — ícones de interface.
-- **Simple Icons** — logotipos de tecnologias e plataformas.
+- **React**
+- **JavaScript**
+- **Vite** 
+- **CSS** 
+- **Lucide React** 
+- **Simple Icons** 
+
+## Implementação
+
+- **Vercel**
 
 ## O que aprendi desenvolvendo
 
-- Organizar uma aplicação React em componentes reutilizáveis e seções independentes.
-- Gerenciar estado e interações com hooks, como idioma, terminal e globo de tecnologias.
-- Criar layouts responsivos e ajustar a experiência para diferentes tamanhos de tela.
-- Implementar navegação por seções, indicadores de rolagem e animações respeitando a preferência por movimento reduzido.
-- Estruturar conteúdo em português e inglês e manter traduções consistentes.
-- Integrar bibliotecas de ícones e construir uma experiência visual coerente com CSS.
-- Executar o fluxo de desenvolvimento e publicação com Vite, incluindo build de produção e configuração para Vercel.
-
-## Publicação na Vercel
-
-O projeto pode ser publicado conectando este repositório à [Vercel](https://vercel.com/):
-
-1. Importe o repositório do GitHub na Vercel.
-2. Selecione **Vite** como framework, se não for detectado automaticamente.
-3. Use `npm run build` como comando de build.
-4. Use `dist` como diretório de saída.
-5. Publique o projeto. A Vercel poderá gerar novos deploys a cada atualização da branch configurada.
+- Desenvolvimento de uma aplicação React utilizando componentes reutilizáveis e organização modular.
+- Gerenciamento de estados e interações com React Hooks.
+- Criação de interfaces responsivas utilizando CSS.
+- Implementação de navegação, animações e suporte a diferentes idiomas.
+- Aplicação de boas práticas de desenvolvimento e organização de código.
+- Utilização de inteligência artificial como copilot para agilizar o desenvolvimento, apoiar decisões técnicas e aprimorar o código.
+- Aprendizado prático sobre build, deploy e publicação utilizando Vite e Vercel. 
 
 ## Como executar localmente
 
