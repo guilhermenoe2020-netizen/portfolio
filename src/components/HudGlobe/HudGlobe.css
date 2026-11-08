@@ -1,0 +1,216 @@
+.globe-explorer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.hud-globe-container {
+  position: relative;
+  width: min(390px, 100%);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.hud-globe-container:active {
+  cursor: grabbing;
+}
+
+.globe-backdrop {
+  position: absolute;
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: inset -18px -8px 26px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.globe-backdrop::before {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 13px, rgba(255, 255, 255, 0.045) 14px, transparent 15px 24px),
+    repeating-linear-gradient(90deg, transparent 0 24px, rgba(255, 255, 255, 0.035) 25px, transparent 26px 37px);
+  opacity: 0.45;
+  transform: rotate(-24deg) scaleX(0.7);
+  animation: planetSurfaceDrift 28s linear infinite;
+  content: '';
+}
+
+.globe-backdrop::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse at 26% 25%, rgba(255, 255, 255, 0.04), transparent 33%),
+    linear-gradient(110deg, transparent 42%, rgba(1, 5, 14, 0.1) 100%);
+  box-shadow: inset -14px -2px 18px rgba(0, 0, 0, 0.12);
+  content: '';
+}
+
+.globe-orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.outer-orbit {
+  width: 92%;
+  height: 45%;
+  transform: rotate(-28deg);
+  animation: orbitPulse 7s ease-in-out infinite alternate;
+}
+
+.inner-orbit {
+  width: 74%;
+  height: 36%;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: rotate(38deg);
+}
+
+.globe-skill-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: var(--node-z);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--node-color);
+  opacity: var(--node-depth);
+  transform:
+    translate(-50%, -50%)
+    translate3d(var(--node-x), var(--node-y), 0)
+    scale(calc(0.7 + var(--node-depth) * 0.3));
+  transition:
+    opacity 160ms ease,
+    filter 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+  cursor: pointer;
+}
+
+.globe-skill-node .technology-logo {
+  width: 21px;
+  height: 21px;
+  overflow: visible;
+  fill: currentColor;
+}
+
+.globe-skill-node .technology-logo-java .java-mark-blue {
+  fill: #0074bd;
+}
+
+.globe-skill-node .technology-logo-java .java-mark-red {
+  fill: #ea2d2e;
+}
+
+.globe-skill-node-github {
+  z-index: 100;
+  width: 46px;
+  height: 46px;
+  opacity: 1;
+}
+
+.globe-skill-node-github .technology-logo {
+  width: 26px;
+  height: 26px;
+}
+
+.technology-logo-fallback {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.globe-skill-node:hover,
+.globe-skill-node:focus-visible,
+.globe-skill-node.is-active {
+  border-color: color-mix(in srgb, var(--node-color), transparent 35%);
+  background: rgba(19, 22, 27, 0.96);
+  color: var(--node-color);
+  opacity: 1;
+  filter: none;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.globe-skill-node::after {
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  z-index: 50;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: #08090c;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+  content: attr(data-tooltip);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  transition: opacity 120ms ease;
+}
+
+.globe-skill-node:hover::after,
+.globe-skill-node:focus-visible::after,
+.globe-skill-node.is-active::after {
+  opacity: 1;
+}
+
+.globe-caption {
+  min-height: 2rem;
+  max-width: 28rem;
+  margin: 0.5rem 0 0;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@keyframes orbitPulse {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+
+@keyframes planetSurfaceDrift {
+  from { transform: rotate(-24deg) scaleX(0.7) translateX(-8%); }
+  to { transform: rotate(-24deg) scaleX(0.7) translateX(8%); }
+}
+
+@media (max-width: 768px) {
+  .hud-globe-container {
+    width: min(350px, 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .outer-orbit,
+  .globe-backdrop::before {
+    animation: none;
+  }
+}

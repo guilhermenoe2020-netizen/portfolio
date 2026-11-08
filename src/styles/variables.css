@@ -1,0 +1,29 @@
+:root {
+  /* Cores Principais */
+  --bg-primary: #101010;
+  --bg-secondary: #151515;
+  --bg-card: #191817;
+
+  /* Destaques azuis inspirados em interfaces de jogos retrô */
+  --accent-blue: #2857b8;
+  --accent-blue-bright: #65a2ff;
+  --accent-blue-glow: rgba(101, 162, 255, 0.22);
+  
+  /* Textos */
+  --text-primary: #f1eee9;
+  --text-muted: #aaa39c;
+  --text-dark: #625e59;
+
+  /* Bordas e Detalhes HUD */
+  --border-color: #302d2a;
+  --border-active: #65a2ff;
+
+  /* Fontes */
+  --font-heading: 'Arial Narrow', 'Segoe UI', Arial, sans-serif;
+  --font-pixel: 'Courier New', Consolas, monospace;
+  --font-mono: 'Cascadia Code', Consolas, 'Courier New', monospace;
+
+  /* Transições */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s ease;
+}

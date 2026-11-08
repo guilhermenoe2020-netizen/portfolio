@@ -1,0 +1,203 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  scroll-padding-top: 90px;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(rgba(101, 162, 255, 0.12) 0.7px, transparent 0.7px);
+  background-size: 17px 17px;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+.app-container-ready {
+  animation: portfolioReveal 550ms ease-out both;
+}
+
+@keyframes portfolioReveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-container-ready {
+    animation: none;
+  }
+}
+
+::selection {
+  color: var(--bg-primary);
+  background: var(--accent-blue-bright);
+}
+
+main > section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.hud-card {
+  position: relative;
+  background-color: rgba(21, 21, 21, 0.94);
+  background-image:
+    radial-gradient(rgba(101, 162, 255, 0.08) 0.7px, transparent 0.7px);
+  background-size: 14px 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+}
+
+.hud-card::before {
+  position: absolute;
+  top: -1px;
+  left: 1.25rem;
+  width: 4.5rem;
+  height: 2px;
+  background: var(--accent-blue-bright);
+  box-shadow: 0 0 12px var(--accent-blue-glow);
+  content: '';
+}
+
+.hud-card-header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  letter-spacing: 0.08em;
+}
+
+.hud-label,
+.hud-tag,
+.category-title {
+  text-transform: uppercase;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.section-level {
+  margin-bottom: 0.5rem;
+  color: var(--accent-blue-bright);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0.15rem 0.65rem;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+.section-title::before,
+.section-title::after {
+  position: absolute;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-color: var(--accent-blue-bright);
+  content: '';
+}
+
+.section-title::before {
+  top: -0.15rem;
+  left: 0;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.section-title::after {
+  right: 0;
+  bottom: -0.15rem;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.section-title-accent {
+  color: var(--accent-blue-bright);
+}
+
+.section-subtitle {
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.section-subtitle::before {
+  color: var(--accent-blue-bright);
+  content: '> ';
+}
+
+.hud-card-header {
+  font-family: var(--font-mono);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-blue-bright);
+  outline-offset: 4px;
+}
+
+@media (hover: none) {
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* Suporte a preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Estilização básica de scrollbar retrô */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}

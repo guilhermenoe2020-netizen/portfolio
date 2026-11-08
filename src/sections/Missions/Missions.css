@@ -1,0 +1,23 @@
+.missions-section {
+  padding: 6rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.missions-container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .missions-section {
+    padding: 4.5rem 0;
+  }
+}
