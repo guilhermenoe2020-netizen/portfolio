@@ -1,7 +1,5 @@
 # Portfólio · Guilherme Noé
 
-**[Acessar portfolio](https://portfolio-omega-ten-79.vercel.app/)**
-
 Portfólio pessoal desenvolvido com React e Vite para apresentar meus projetos, habilidades, tecnologias e trajetória como desenvolvedor. Possui interface responsiva com referências visuais de terminal e pixel art.
 
 ## Demonstração
@@ -16,7 +14,7 @@ As imagens abaixo mostram a página inicial e a seção de tecnologias:
 
 ![Seção de tecnologias com cartões e globo interativo](docs/screenshots/stack.png)
 
-> **Versão online:** o projeto está preparado para publicação na Vercel. Adicione aqui o endereço público após concluir o deploy.
+> **Versão online:** **[Acessar portfolio](https://portfolio-omega-ten-79.vercel.app/)**.
 
 ## O que o site apresenta
 
